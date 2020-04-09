@@ -1,43 +1,63 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href=@Url.Content("~/Content/lib/theme-chalk/index.css")>
+    <link rel="stylesheet" href=@Url.Content("~/Content/Site.css")>
+    <script src="~/Content/lib/index.js"></script>
+    <script src="~/Content/zhTW.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jquery-form/form@4.2.2/dist/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+    @RenderSection("Styles", false)
 </head>
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("關於", "About", "Home")</li>
-                    <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
-                </ul>
+    <script>
+        ELEMENT.locale(ELEMENT.lang.zhTW)
+    </script>
+    <header>
+        <a href="#" onclick="vmLayout.windowOpener('Home/Logout','_self');">
+            @*<span>登出</span>*@
+            <img src="~/Content/img/account-logout.png" />
+        </a>
+    </header>
+    <section>
+        <div id="layoutVm" style="background-color:#545c64;">
+          
+                <el-menu :collapse="isCollapse" background-color="#545c64" active-text-color="#ffd04b" >
+                    <el-submenu  >
+                        <template slot="title">
+                            <span slot="title">A_Menu</span>
+                        </template>
+                        <a href='@Url.Content("~/Home/Index")' >
+                            <el-menu-item :index="1-1" >
+                               測試頁面
+                            </el-menu-item>
+                        </a>
+                    </el-submenu>
+                </el-menu>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @*background-image:url('/Img/bg_new.png');*@
+        <article class="page-content" style="overflow:auto;background-image:url('/Img/bg_new.png');background-size:cover;background-position:center center;">
+            @RenderBody()
+        </article>
+    </section>
+
 </body>
 </html>
+@RenderSection("scripts", required: false)
+<script src="~/Scripts/layout.js"></script>
+
+
+
+
+
