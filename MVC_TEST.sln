@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_TEST", "MVC_TEST\MVC_TEST.csproj", "{C7B6C320-941A-4C46-9C99-6C97BC05E9AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85EC1377-77E8-4607-BB2C-3C8FEA69B42C} = {85EC1377-77E8-4607-BB2C-3C8FEA69B42C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_TEST", "API_TEST\API_TEST.csproj", "{85EC1377-77E8-4607-BB2C-3C8FEA69B42C}"
 EndProject
