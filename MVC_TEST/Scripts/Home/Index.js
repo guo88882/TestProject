@@ -8,11 +8,20 @@ function vmStart() {
         },
         mounted: function () {
             this.$nextTick(function () {
-              
+                vm.GetTestAPI();
             });
         },
         methods: {
-         
+            GetTestAPI: function () {
+                $.ajax({
+                    url:  "../swagger/api/Test/TestGet?type=AA",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (datas) {
+                        console.log(datas)
+                    }
+                });
+            },
         }
     })
 }
