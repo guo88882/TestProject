@@ -11,8 +11,8 @@
     <link rel="stylesheet" href=@Url.Content("~/Content/Site.css")>
     <script src="~/Content/lib/index.js"></script>
     <script src="~/Content/zhTW.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <script src="~/Scripts/jquery-2.2.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jquery-form/form@4.2.2/dist/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
     @RenderSection("Styles", false)
 </head>
@@ -31,23 +31,23 @@
     <section>
         <div id="layoutVm" style="background-color:#545c64;">
           
-                <el-menu :collapse="isCollapse" background-color="#545c64" active-text-color="#ffd04b" >
-                    <el-submenu  >
+                <el-menu  background-color="#545c64" active-text-color="#ffd04b" >
+                    <el-submenu  index="1" >
                         <template slot="title">
                             <span slot="title">A_Menu</span>
                         </template>
                         <a href='@Url.Content("~/Home/Index")' >
-                            <el-menu-item :index="1-1" >
+                            <el-menu-item index="1-1" >
                                測試頁面
                             </el-menu-item>
                         </a>
                     </el-submenu>
                 </el-menu>
-            </div>
+           
         </div>
 
         @*background-image:url('/Img/bg_new.png');*@
-        <article class="page-content" style="overflow:auto;background-image:url('/Img/bg_new.png');background-size:cover;background-position:center center;">
+        <article class="page-content" style="overflow:auto;background-size:cover;background-position:center center;">
             @RenderBody()
         </article>
     </section>
